@@ -214,6 +214,9 @@ var app = {
       let gender = validateField("#gender");
       let countryOfBirth = validateField("#countryOfBirth");
       let nationality = validateField("#nationality");
+      let birthDay = validateField("#birthDay");
+      let birthMonth = validateField("#birthMonth");
+      let birthYear = validateField("#birthYear");
 
       if (isValid) {
         let personalInfoData = {
@@ -224,6 +227,9 @@ var app = {
           gender,
           countryOfBirth,
           nationality,
+          birthDay,
+          birthMonth,
+          birthYear,
         };
 
         localStorage.setItem("personalInfo", JSON.stringify(personalInfoData));
@@ -365,6 +371,9 @@ var app = {
     $("#gender").val(personalInfo.gender || "");
     $("#nationality").val(personalInfo.nationality || "");
     $("#countryOfBirth").val(personalInfo.countryOfBirth || "");
+    $("#birthDay").val(personalInfo.birthDay || "");
+    $("#birthMonth").val(personalInfo.birthMonth || "");
+    $("#birthYear").val(personalInfo.birthYear || "");
 
     $("#typeOfInstitutions").val(educationInfo.typeOfInstitutions || "");
     $("#nameOfInstitution").val(educationInfo.nameOfInstitution || "");
