@@ -1258,6 +1258,10 @@ a {
 
 @media only screen and (max-width: 991px) {
 
+    .portal-header {
+        display: flex !important;
+    }
+
     .portal-fr .portal-section-title {
         grid-column: unset;
     }
@@ -1379,5 +1383,13 @@ a {
         width: 100%;
         max-width: 350px;
         margin: auto;
+    }
+
+    .rl-title p {
+        display: none;
+    }
+
+    .portal-nav {
+        gap: 1rem;
     }
 }
