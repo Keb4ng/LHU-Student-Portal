@@ -1195,6 +1195,12 @@ a {
     color: white;
 }
 
+.portal-fr .portal-section-title {
+    grid-column: span 2;
+    background-color: var(--c-secondary);
+    font-weight: 500;
+}
+
 @media only screen and (max-width: 991px) {
 
     .mh-cont {

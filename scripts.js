@@ -11,6 +11,76 @@ var app = {
       "Artificial Intelligence",
       "Marketing Management",
       "Civil Engineering",
+      "Accounting & Finance",
+      "Acting",
+      "Art History",
+      "Artificial Intelligence",
+      "Business Management",
+      "Childhood & Youth",
+      "Conservation Biology",
+      "Contemporary Craft",
+      "Contemporary Fashion Design",
+      "Creative Industries Business Management",
+      "Creative Writing",
+      "Criminology",
+      "Dance",
+      "Digital Creativity",
+      "Digital Marketing",
+      "Drama",
+      "Drama & Theatre",
+      "Early Childhood",
+      "Early Education Primary (3-7) with QTS",
+      "Economics",
+      "Education",
+      "Electronic & Computer Engineering",
+      "English Language",
+      "English Literature",
+      "Environmental Geography",
+      "Environmental Science",
+      "Film & Visual Culture",
+      "Film, TV, Radio & Media Production",
+      "Fine Art",
+      "Food & Nutritional Sciences",
+      "Geography",
+      "Global Philosophies & Worldviews",
+      "Graphic Design",
+      "Health & Social Care",
+      "Health & Wellbeing",
+      "History",
+      "Human Biology",
+      "Human Geography",
+      "Information Technology",
+      "International Relations",
+      "Law",
+      "Law LLB",
+      "Mathematics",
+      "Media & Communication",
+      "Music",
+      "Music Production",
+      "Musical Theatre",
+      "Philosophy & Ethics",
+      "Physical Geography",
+      "Politics",
+      "Politics & International Relations",
+      "Primary Education (5-11) with QTS",
+      "Psychology in Business",
+      "Psychology in Education",
+      "Religion, Theology and Spirituality",
+      "Robotics",
+      "Social Care",
+      "Social Work",
+      "Sociology",
+      "Software Engineering",
+      "Special Educational Needs",
+      "Special Educational Needs & Disability Studies",
+      "Sport & Exercise Nutrition",
+      "Sport & Exercise Science",
+      "Sport & Physical Education",
+      "Sport Management",
+      "Sport Psychology",
+      "Sport Rehabilitation",
+      "Tourism",
+      "Tourism Management",
     ];
 
     searchBox.on("input", function () {
@@ -123,6 +193,7 @@ var app = {
   personalInfo: () => {
     $("#form-btn-p2").click(function (event) {
       event.preventDefault();
+      console.log(333);
       let isValid = true;
 
       function validateField(selector) {
@@ -139,7 +210,7 @@ var app = {
       let nameTitle = validateField("#nameTitle");
       let firstName = validateField("#firstName");
       let lastName = validateField("#lastName");
-      let prevName = $("#prevLastName").val().trim();
+      let prevName = $("#prevName").val();
       let gender = validateField("#gender");
       let countryOfBirth = validateField("#countryOfBirth");
       let nationality = validateField("#nationality");
@@ -234,6 +305,85 @@ var app = {
       window.location.href = "./applicant-hub__p6.html";
     });
   },
+
+  educationInfo: () => {
+    $("#form-btn-p3").click(function (event) {
+      event.preventDefault();
+      let isValid = true;
+
+      function validateField(selector) {
+        let value = $(selector).val().trim();
+        if (value === "") {
+          $(selector).css("border", "2px solid red");
+          isValid = false;
+        } else {
+          $(selector).css("border", "");
+        }
+        return value;
+      }
+
+      let typeOfInstitutions = validateField("#typeOfInstitutions");
+      let nameOfInstitution = validateField("#nameOfInstitution");
+      let cityOfInstitution = validateField("#cityOfInstitution");
+      let countryOfInstitution = $("#countryOfInstitution").val().trim();
+      let qualifications = validateField("#qualifications");
+      let titleOfProgram = validateField("#titleOfProgram");
+      let expectedResult = validateField("#expectedResult");
+      let startDate = validateField("#startDate");
+      let endDate = validateField("#endDate");
+
+      if (isValid) {
+        let educationInfoData = {
+          typeOfInstitutions,
+          nameOfInstitution,
+          cityOfInstitution,
+          countryOfInstitution,
+          qualifications,
+          titleOfProgram,
+          expectedResult,
+          startDate,
+          endDate,
+        };
+
+        localStorage.setItem("educationInfo", JSON.stringify(educationInfoData));
+        window.location.href = "applicant-hub__p4.html";
+      } else {
+        console.log("error saving");
+      }
+    });
+  },
+
+  confirmAndSubmit: () => {
+    let personalInfo = JSON.parse(localStorage.getItem("personalInfo") || "{}");
+    let educationInfo = JSON.parse(localStorage.getItem("educationInfo") || "{}");
+    let selectProgram = JSON.parse(localStorage.getItem("selectProgram") || "{}");
+
+    $("#nameTitle").val(personalInfo.nameTitle || "");
+    $("#firstName").val(personalInfo.firstName || "");
+    $("#lastName").val(personalInfo.lastName || "");
+    $("#prevName").val(personalInfo.prevName || "");
+    $("#gender").val(personalInfo.gender || "");
+    $("#nationality").val(personalInfo.nationality || "");
+    $("#countryOfBirth").val(personalInfo.countryOfBirth || "");
+
+    $("#typeOfInstitutions").val(educationInfo.typeOfInstitutions || "");
+    $("#nameOfInstitution").val(educationInfo.nameOfInstitution || "");
+    $("#cityOfInstitution").val(educationInfo.cityOfInstitution || "");
+    $("#countryOfInstitution").val(educationInfo.countryOfInstitution || "");
+    $("#startDate").val(educationInfo.startDate || "");
+    $("#endDate").val(educationInfo.endDate || "");
+    $("#titleOfProgram").val(educationInfo.titleOfProgram || "");
+    $("#qualifications").val(educationInfo.qualifications || "");
+    $("#expectedResult").val(educationInfo.expectedResult || "");
+
+    $("#search-box").val(selectProgram.programName || "");
+    $("#intakePeriod").val(selectProgram.intakePeriod || "");
+    $("#deadlines").val(selectProgram.deadlines || "");
+
+    if (selectProgram.degreeType) {
+      $(`input[name="degree-type"][value="${selectProgram.degreeType}"]`).prop("checked", true);
+    }
+  },
 };
 
 $(document).ready(function () {
@@ -243,4 +393,6 @@ $(document).ready(function () {
   app.selectProgram();
   app.personalInfo();
   app.paymentMethod();
+  app.educationInfo();
+  app.confirmAndSubmit();
 });
