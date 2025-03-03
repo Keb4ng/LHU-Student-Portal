@@ -1201,7 +1201,66 @@ a {
     font-weight: 500;
 }
 
+.submit-pop-up {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    visibility: hidden;
+}
+
+.submit-message {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+}
+
+.submit-message p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.submit-message span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #787878;
+}
+
+.submit-message a {
+    width: 100%;
+    height: auto;
+    background-color: var(--c-secondary);
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    transition: 300ms;
+    font-weight: 500;
+}
+
+.submit-message a:hover {
+    background-color: var(--c-accent);
+}
+
 @media only screen and (max-width: 991px) {
+
+    .portal-fr .portal-section-title {
+        grid-column: unset;
+    }
 
     .mh-cont {
         display: grid;

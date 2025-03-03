@@ -388,10 +388,68 @@ var app = {
     $("#search-box").val(selectProgram.programName || "");
     $("#intakePeriod").val(selectProgram.intakePeriod || "");
     $("#deadlines").val(selectProgram.deadlines || "");
-
     if (selectProgram.degreeType) {
       $(`input[name="degree-type"][value="${selectProgram.degreeType}"]`).prop("checked", true);
     }
+
+    let savedFiles = JSON.parse(localStorage.getItem("uploadedFiles") || "{}");
+
+    if (savedFiles.transcript) {
+      $("#transcript").val(savedFiles.transcript);
+    }
+    if (savedFiles.recommendation) {
+      $("#recommendation").val(savedFiles.recommendation);
+    }
+    if (savedFiles.sop) {
+      $("#sop").val(savedFiles.sop);
+    }
+    if (savedFiles.portfolio) {
+      $("#portfolio").val(savedFiles.portfolio);
+    }
+
+    $("input[type='file']").change(function () {
+      let fileName = $(this)[0].files[0]?.name || "";
+      $(this).siblings(".file-name").val(fileName);
+    });
+  },
+
+  uploadDocs: () => {
+    $("#form-btn-p4").click(function () {
+      let filesData = {};
+      if ($("#transcript")[0].files.length) {
+        filesData.transcript = $("#transcript")[0].files[0].name;
+      }
+      if ($("#recommendation")[0].files.length) {
+        filesData.recommendation = $("#recommendation")[0].files[0].name;
+      }
+      if ($("#sop")[0].files.length) {
+        filesData.sop = $("#sop")[0].files[0].name;
+      }
+      if ($("#portfolio")[0].files.length) {
+        filesData.portfolio = $("#portfolio")[0].files[0].name;
+      }
+
+      localStorage.setItem("uploadedFiles", JSON.stringify(filesData));
+      setTimeout(function () {
+        window.location.href = "applicant-hub__p5.html";
+      }, 300);
+    });
+
+    let savedFiles = localStorage.getItem("uploadedFiles");
+    if (savedFiles) {
+      console.log("Previously saved files:", JSON.parse(savedFiles));
+    }
+  },
+
+  fsubmit: () => {
+    $("#submit-btn").click(function (event) {
+      event.preventDefault();
+      $(".submit-pop-up").css("visibility", "visible").css("opacity", "1");
+    });
+
+    $(".submit-pop-up a").click(function () {
+      $(".submit-pop-up").css("visibility", "hidden").css("opacity", "0");
+    });
   },
 };
 
@@ -404,4 +462,6 @@ $(document).ready(function () {
   app.paymentMethod();
   app.educationInfo();
   app.confirmAndSubmit();
+  app.uploadDocs();
+  app.fsubmit();
 });
