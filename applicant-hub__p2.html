@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/x-icon" href="./media/LHU Logo.png" />
+    <title>Liverpool Hope University Student Portal</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-cont">
+        <div class="rl-title ">
+            <div class="rl-logo portal-logo">
+                <img src="./media/LHU Logo.png" alt="">
+            </div>
+            <p>LHU <span>Student Portal</span></p>
+        </div>
+        <div class="header-cont__right">
+            <ul class="portal-nav">
+                <li><a href="#"><i class="fa-solid fa-circle-question"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-user-gear"></i></a></li>
+                <li><a href="./portal-index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
+            </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="portal-container portal-div">
+      <div class="portal-border">
+        <div class="portal-form">
+          <div class="portal-section-title">
+            Personal Information
+          </div>
+          <div class="form-row">
+            <label for="">Title:</label>
+            <select id="nameTitle">
+              <option value="">Select</option>
+              <option value="Mr">Mr.</option>
+              <option value="Mrs.">Mrs.</option>
+              <option value="Ms.">Ms.</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="firstName">Preferred First Name:</label>
+            <input type="text" id="firstName">
+          </div>
+          <div class="form-row">
+            <label for="lastName">Preferred Last Name:</label>
+            <input type="text" id="lastName">
+          </div>
+          <div class="form-row">
+            <label for="prevLastName">Previous Last Name (If Applicable):</label>
+            <input type="text" id="prevLastName">
+          </div>
+          <div class="form-row">
+            <label for="">Gender:</label>
+            <select  id="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label >Date of Birth:</label>
+            <input type="text" placeholder="Day" id="birthDay">
+            <input type="text" placeholder="Month" id="birthMonth">
+            <input type="text" placeholder="Year" id="birthYear">
+          </div>
+          <div class="form-row">
+            <label for="">Country of Birth:</label>
+            <select id="countryOfBirth">
+              <option value="London">London</option>
+              <option value="United States">United States</option>
+              <option value="Philippines">Philippines</option>
+              <option value="France">France</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="nationality">Nationality:</label>
+            <select  id="nationality">
+              <option value="Cambodian">Cambodian</option>
+              <option value="Chinese">Chinese</option>
+              <option value="Czech">Czech</option>
+              <option value="English">English</option>
+              <option value="French">French</option>
+              <option value="Filipino">Filipino</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-controls">
+          <a href="./applicant-hub__p1.html" class="form-btn"><i class="fa-solid fa-angles-left"></i> Prev</a>
+          <a  href="#" class="form-btn"><i class="fa-solid fa-floppy-disk"></i>  Save</a>
+          <button class="form-btn" id="form-btn-p2">Next <i class="fa-solid fa-angles-right"></i> </button>
+        </div>
+      </div>
+
+      <div class="form-stage-container">
+        <div class="stage">
+           <span>Select Program</span><i class="fa-solid fa-check"></i>
+        </div>
+        <div class="stage">
+           <span>Personal Information</span><i class="fa-solid fa-check"></i>
+        </div>
+        <div class="stage inactive">
+           <span>Employment History</span> <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
+        <div class="stage inactive">
+          <span>Upload Required Documents</span> <i class="fa-solid fa-circle-exclamation"></i>
+       </div>
+       <div class="stage inactive">
+          <span>Payment & Application Fee Submission</span> <i class="fa-solid fa-circle-exclamation"></i>
+       </div>
+       <div class="stage inactive">
+          <span>Submit Application & Confirmation</span> <i class="fa-solid fa-circle-exclamation"></i>
+       </div>
+      </div>
+    </div>
+    
+    <footer class="footer-section">
+      <div class="m-cont">
+        <div class="custom-row">
+          <div class="col-x2">
+            <p class="footer-title">Liverpool Hope University</p>
+            <p class="footer-desc">
+              A hub of academic excellence, innovation, and community spirit. With a rich heritage and a commitment to research and personal growth,
+              we empower students to achieve their full potential. Our supportive learning environment, state-of-the-art facilities, and vibrant
+              campus life create an inspiring space for knowledge, creativity, and opportunity.
+              <div class="footer-smi">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-square-youtube"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-linkedin"></i>
+              </div>
+              <p class="footer-creds">© 2025 Liverpool Hope University</p>
+            </p>
+          </div>
+          <div class="col-x2">
+            <div class="footer-subs">
+              <p>Subscribe to our Newsletter</p>
+              <form action="">
+                <input type="text" name="name" id="name" placeholder="Enter Email...">
+                <button><i class="fa-solid fa-paper-plane"></i></button>
+              </form>
+            </div>
+            <ul class="footer-contacts">
+              <li><a href="#"><i class="fa-solid fa-location-dot"></i>Hope Park, Liverpool L16 9JD</a></li>
+              <li><a href="#"><i class="fa-solid fa-envelope"></i>enquiry@hope.ac.uk</a></li>
+              <li><a href="#"><i class="fa-solid fa-phone"></i>+44 (0)151 291 3000</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/65e82f8b2f.js"></script>
+  <script src="./scripts.js"></script>
+</html>

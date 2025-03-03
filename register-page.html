@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/x-icon" href="./media/LHU Logo.png" />
+    <title>Liverpool Hope University Student Portal</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-cont">
+        <div class="main-logo">
+          <a href="./index.html"><img src="./media/LHU Logo.png" alt="LHU Logo" /></a>
+        </div>
+        <div class="header-cont__right">
+          <ul class="header-nav">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <div class="header-btns">
+            <a class="login-btn" href="./login-page.html">Log-in</a>
+            <a class="register-btn" href="./register-page.html">Register</a>
+          </div>
+        </div>
+      </div>
+      <div class="mh-cont">
+        <div><i class="fa-solid fa-bars"></i></div>
+        <div><i class="fa-solid fa-phone"></i></div>
+        <div><i class="fa-solid fa-envelope"></i></div>
+      </div>
+    </header>
+
+    <div class="login-container">
+      <div class="m-cont">
+        <div class="custom-row">
+          <div class="col-x2">
+            <div class="rl-title">
+              <div class="rl-logo">
+                  <img src="./media/LHU Logo.png" alt="">
+              </div>
+              <p>LHU <span>Student Portal</span></p>
+            </div>
+            <p class="rform-description">Join a vibrant academic community at Liverpool Hope University, where tradition meets innovation. Our diverse programs, expert faculty, and supportive environment empower you to achieve your dreams. Whether you're pursuing undergraduate or postgraduate studies, you'll benefit from a personalized learning experience that prepares you for a successful career. Don't miss your chance to be part of a university that values academic excellence and personal growth. Register now and take the first step toward a brighter future!</p>
+          </div>
+          <div class="col-x2">
+            <div class="rform-title">
+              <p>REGISTER NOW!</p>
+              <span>Unlock Your Future – Register Now at Liverpool Hope University!</span>
+            </div>
+            <form class="rform" id="registerForm">
+              <div class="rform-row rform-ix2">
+                <input type="text" placeholder="First Name" id="regFirstName">
+                <input type="text" placeholder="Last Name" id="regLastName">
+              </div>
+              <div class="rform-row">
+                <input type="text" placeholder="Username" id="regUsername" required>
+              </div>
+              <div class="rform-row">
+                <input type="text" placeholder="Password" id="regPassword" required>
+              </div>
+              <div class="rform-row">
+                <input type="text" placeholder="Email" id="regEmail" required>
+              </div>
+              <button class="rl-btn" type="submit">REGISTER</button>
+            </form>
+            <p id="regMessage"></p>
+          </div>  
+        </div>
+      </div>
+    </div>
+    
+    <footer class="footer-section">
+      <div class="m-cont">
+        <div class="custom-row">
+          <div class="col-x2">
+            <p class="footer-title">Liverpool Hope University</p>
+            <p class="footer-desc">
+              A hub of academic excellence, innovation, and community spirit. With a rich heritage and a commitment to research and personal growth,
+              we empower students to achieve their full potential. Our supportive learning environment, state-of-the-art facilities, and vibrant
+              campus life create an inspiring space for knowledge, creativity, and opportunity.
+              <div class="footer-smi">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-square-youtube"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-linkedin"></i>
+              </div>
+              <p class="footer-creds">© 2025 Liverpool Hope University</p>
+            </p>
+          </div>
+          <div class="col-x2">
+            <div class="footer-subs">
+              <p>Subscribe to our Newsletter</p>
+              <form action="">
+                <input type="text" name="name" id="name" placeholder="Enter Email...">
+                <button><i class="fa-solid fa-paper-plane"></i></button>
+              </form>
+            </div>
+            <ul class="footer-contacts">
+              <li><a href="#"><i class="fa-solid fa-location-dot"></i>Hope Park, Liverpool L16 9JD</a></li>
+              <li><a href="#"><i class="fa-solid fa-envelope"></i>enquiry@hope.ac.uk</a></li>
+              <li><a href="#"><i class="fa-solid fa-phone"></i>+44 (0)151 291 3000</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/65e82f8b2f.js"></script>
+  <script src="./scripts.js"></script>
+</html>
